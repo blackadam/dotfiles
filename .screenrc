@@ -1,0 +1,25 @@
+shell zsh
+
+## Appearance
+startup_message off 
+hardstatus alwayslastline # status at the bottom of screen
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W}%c %{g}]'
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm' # AB=background, AF=foreground
+defbce "on" # erase background with current bg color
+term screen-256color
+
+## Fix scrolling in konsole
+termcapinfo xterm* ti@:te@
+
+## Keys 
+bindkey -k k5 prev
+bindkey -k k6 next
+#let pgup/pgdn scroll under urxvt (see .Xdefaults)
+bindkey "^[[5;2~" eval "copy" "stuff ^u"
+bindkey -m "^[[5;2~" stuff ^u
+bindkey -m "^[[6;2~" stuff ^d
+
+
+### Startup examples
+#screen -t rTorrent rtorrent
+#select 0
