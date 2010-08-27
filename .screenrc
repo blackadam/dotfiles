@@ -1,5 +1,6 @@
 shell zsh
 
+
 ## Appearance
 startup_message off 
 hardstatus alwayslastline # status at the bottom of screen
